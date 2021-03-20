@@ -3,7 +3,8 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ testing ]
+    branches: 
+      - master
   pull_request:
     branches: [ testing ]
 
