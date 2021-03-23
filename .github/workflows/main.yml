@@ -2,9 +2,9 @@ name: forLaba1
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ testing ]
+    branches: [ Lab1 ]
   pull_request:
-    branches: [ testing ]
+    branches: [ Lab1 ]
 jobs:
   # This workflow contains a single job called "build"
   build:
