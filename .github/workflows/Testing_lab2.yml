@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ Lab2 ]
 jobs:
-  build:
+  testing:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,3 +13,10 @@ jobs:
       - name: compiling and test
         run: |
               make -C Laba2/
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install valgrind and cpplint
+        run: |
+              sudo apt install valgrind
+              sudo pip install cpplint
