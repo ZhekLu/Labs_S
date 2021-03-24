@@ -10,6 +10,11 @@ int main()
     {
         int size;
         char* bin_m = ToBinary(m, &size);
+        if(!bin_m)
+        {
+            printf("\nThere's some problems with memory...\n");
+            return 0;
+        }
         if(is_sequence_ofpairs(bin_m, size))
         {
             printf("|| %d is a sequence of pairs: %s\n", m, bin_m);
@@ -26,7 +31,10 @@ int main()
 char* ToBinary(int num, int* size)
 {
     *size = HowManyDigits(2, num);
-    char* binaryNum = (char *)malloc(*size + 1); //free(binaryMum)
+    //there u should check if malloc do smth
+    char* binaryNum = (char *)malloc(*size + 1); //free(binaryNum)
+    if(!binaryNum)
+        return NULL;
     int digit = 0;
     for(int i = 0; i < *size; i++)
     {
