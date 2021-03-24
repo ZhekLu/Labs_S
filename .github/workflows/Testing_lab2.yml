@@ -1,0 +1,15 @@
+name: forLaba2
+on:
+  push:
+    branches: [ Lab2 ]
+  pull_request:
+    branches: [ Lab2 ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: compiling and test
+        run: |
+              make -C Laba2/
