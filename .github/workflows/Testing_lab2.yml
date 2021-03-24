@@ -16,6 +16,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: install valgrind and cpplint
         run: |
               sudo apt install valgrind
