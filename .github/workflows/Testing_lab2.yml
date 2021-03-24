@@ -19,4 +19,5 @@ jobs:
       - name: install valgrind and cpplint
         run: |
               sudo apt install valgrind
-              sudo pip install cpplint
+              sudo pip install cpplint 
+              find ./Laba2 -horoscope *.h -horoscope *.c | xargs cpplint
