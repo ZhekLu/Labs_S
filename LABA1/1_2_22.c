@@ -31,18 +31,19 @@ int main()
     }
     system("pause");
 }
-// size = size of future digit array
+/* size = size of future digit array */
 char* ToBinary(int num, int* size)
 {
     *size = HowManyDigits(2, num);
-    //there u should check if malloc do smth
-    char* binaryNum = (char *)malloc(*size + 1); //free(binaryNum)
+    /* there u should check if malloc do smth */
+    char* binaryNum = (char *)malloc(*size + 1); /* free(binaryNum) */
     if(binaryNum == NULL)
     {
         return NULL;
     }
     int digit = 0;
-    for(int i = 0; i < *size; i++)
+    int i;
+    for(i = 0; i < (*size); i++)
     {
         digit = num % 2;
         binaryNum[i] = digit + '0';
@@ -56,7 +57,8 @@ char* ToBinary(int num, int* size)
 void Upend(char* arr, int length)
 {
     char temp;
-    for(int i = 0; i < length / 2; i++)
+    int i;
+    for(i = 0; i < length / 2; i++)
     {
         temp = arr[i];
         arr[i] = arr[length - i - 1];
@@ -73,7 +75,8 @@ int is_sequence_ofpairs(char* num, int length)
     else 
     {
         int findPair = FALSE;
-        for (int i = 0; i < length; i += 2)
+        int i;
+        for (i = 0; i < length; i += 2)
         {
             findPair = (num[i] == num[i + 1])? TRUE : FALSE; 
         }
