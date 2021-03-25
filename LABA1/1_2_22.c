@@ -9,7 +9,7 @@ int main()
     if(scanf("%d", &m) == 1)
     {
         int size;
-        char* bin_m = /*@out@*/ ToBinary(m, &size);
+        /*@out@*/ char* bin_m = ToBinary(m, &size);
         if(!bin_m)
         {
             printf("\nThere's some problems with memory...\n");
