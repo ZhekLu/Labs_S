@@ -17,11 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: install valgrind and cpplint
         run: |
               sudo apt install valgrind
               sudo pip install cpplint 
+              
+      - name: check code with valgrind
+        run: |
               cd Laba2
-              #cpplint --help
+              make -C
               valgrind ./horoscope
-      
+              
+        
+        
+        
+        
