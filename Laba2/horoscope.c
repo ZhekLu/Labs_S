@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <conio.h>
+//#include <conio.h>
 #include "horoscope.h"
 #include <string.h>
 
@@ -229,8 +229,16 @@ void DataInput(int* person)
     int input = 0;
     do
     {
-        input = getch();
-        correctInput = ((char)input == '1' || (char)input == '2')? TRUE : FALSE; 
+        if(scanf("%d", &input) != 1)
+        {
+            correctInput = FALSE;
+            while(getchar() != '\n') {}  
+        }
+        else  
+        {
+            correctInput = ((char)input == '1' || (char)input == '2')? TRUE : FALSE; 
+        }
+        //input = getch();
     } while (!correctInput);
     person[3] = input - 49; // '0' = 48;
     
@@ -254,11 +262,20 @@ char Menu()
     _________________________________________________\n");
     do
     {
-        input = getch();
-        if(input < 49 || input > 57)
-            printf("%c - is not valid input. U chould enter a number from 1 to 9.\n", input); 
-        else 
-            correctInput = TRUE; 
+        //input = getch();
+        if(scanf("%d", &input) != 1)
+        {
+            correctInput = FALSE;
+            while(getchar() != '\n') {}
+            printf("Incorrect input\n");
+        }
+        else
+        {
+            if(input < 49 || input > 57)
+                printf("%c - is not valid input. U chould enter a number from 1 to 9.\n", (char)input); 
+            else 
+                correctInput = TRUE;
+        } 
     } while(!correctInput);
 
     if((char)input == '1' || (char)input == '2')
@@ -280,9 +297,14 @@ char Menu()
             2. No. \n");
             do
             {
-                tempInput = getch();
-                if(tempInput < 49 || tempInput > 50)
-                    printf("%c - is not valid input. U chould enter 1 or 2.\n", input); 
+                //tempInput = getch();
+                if(scanf("%d", &tempInput) != 1)
+                {
+                    correctInput = FALSE;
+                    while(getchar() != '\n') {}
+                }
+                else if(tempInput < 49 || tempInput > 50)
+                    printf("%d - is not valid input. U chould enter 1 or 2.\n", input); 
                 else 
                     correctInput = TRUE; 
             } while (!correctInput);
