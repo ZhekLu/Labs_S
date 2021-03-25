@@ -31,8 +31,9 @@ jobs:
               cd bin
               echo 12345 > input.txt
               valgrind ./main < input.txt
+              valgrind --leak-check=full ./main < input.txt
               cd ..
       - name: check code with cpplint
         run: |
-              cpplint *.c
+              cpplint 1_2_22.c
             
