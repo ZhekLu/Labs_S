@@ -24,3 +24,8 @@ jobs:
 
         run: |
               make -C LABA1/
+              
+      - name: check code with valgrind
+        run: |
+              cd LABA1
+              valgrind ./1_2_22
