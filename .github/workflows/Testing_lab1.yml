@@ -27,7 +27,8 @@ jobs:
               
       - name: check code with valgrind
         run: |
-              dir
               cd LABA1
-              dir
-              #valgrind ./1_2_22
+              mkdir bin
+              gcc -o bin/lab1 1_2_22.c
+              cd bin
+              valgrind ./lab1
