@@ -22,12 +22,7 @@ jobs:
         run: |
               sudo apt install valgrind
               sudo pip install cpplint 
-              
-      - name: check code with valgrind
-        run: |
-              cd Laba2
-              make
-              valgrind ./horoscope
+
               
         
         
