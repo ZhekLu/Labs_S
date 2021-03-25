@@ -27,5 +27,7 @@ jobs:
               
       - name: check code with valgrind
         run: |
+              dir
               cd LABA1
-              valgrind ./1_2_22
+              dir
+              #valgrind ./1_2_22
