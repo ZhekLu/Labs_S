@@ -25,11 +25,14 @@ int main()
         }
         free(bin_m);
     }
-    else printf("|Error||Uncorrect input.\n");
+    else 
+    {
+        printf("|Error||Uncorrect input.\n");
+    }
     system("pause");
 }
 // size = size of future digit array
-char* ToBinary(int num, int* size)
+/*@null@*/char* ToBinary(int num, int* size)
 {
     *size = HowManyDigits(2, num);
     //there u should check if malloc do smth
