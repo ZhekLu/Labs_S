@@ -18,10 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: install valgrind and cpplint
+      - name: install valgrind and splint
         run: |
               sudo apt install valgrind
-              sudo pip install cpplint 
+              #sudo pip install cpplint 
+              sudo apt install splint
       - name: install conio.h
         run: |
               git clone https://github.com/zoelabbb/conio.h
@@ -31,6 +32,15 @@ jobs:
       - name: compiling and test 
         run: |
               make -C Laba2/
+      - name: check code with valgrind
+        run: |
+              cd Laba2
+              cd bin
+              echo 9 > input.txt
+              valgrind ./main < input.txt
+              #uncomm if valgrind give error
+              #valgrind --leak-check=full ./main < input.txt
+              cd ..
           
               
               
