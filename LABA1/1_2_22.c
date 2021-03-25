@@ -37,8 +37,10 @@ char* ToBinary(int num, int* size)
     *size = HowManyDigits(2, num);
     //there u should check if malloc do smth
     char* binaryNum = (char *)malloc(*size + 1); //free(binaryNum)
-    if(!binaryNum)
+    if(binaryNum == NULL)
+    {
         return NULL;
+    }
     int digit = 0;
     for(int i = 0; i < *size; i++)
     {
