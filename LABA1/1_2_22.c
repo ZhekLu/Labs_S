@@ -9,7 +9,7 @@ int main()
     if(scanf("%d", &m) == 1)
     {
         int size;
-        char* bin_m = ToBinary(m, &size);
+        char* bin_m = /*@out@*/ ToBinary(m, &size);
         if(!bin_m)
         {
             printf("\nThere's some problems with memory...\n");
@@ -30,13 +30,14 @@ int main()
         printf("|Error||Uncorrect input.\n");
     }
     system("pause");
+    return 0;
 }
 /* size = size of future digit array */
-char* ToBinary(int num, int* size)
+/*@null@*/char* ToBinary(int num, int* size)
 {
     *size = HowManyDigits(2, num);
     /* there u should check if malloc do smth */
-    char* binaryNum = (char *)malloc(*size + 1); /* free(binaryNum) */
+    char* binaryNum = (char *)malloc((*size) + 1); /* free(binaryNum) */
     if(binaryNum == NULL)
     {
         return NULL;
@@ -46,7 +47,7 @@ char* ToBinary(int num, int* size)
     for(i = 0; i < (*size); i++)
     {
         digit = num % 2;
-        binaryNum[i] = digit + '0';
+        binaryNum[i] = digit + (int)'0';
         num /= 2;
     }
     binaryNum[*size] = '\0';
