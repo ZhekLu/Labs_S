@@ -29,7 +29,9 @@ jobs:
         run: |
               cd LABA1
               cd bin
-              valgrind ./main
+              echo 12345 > input.txt
+              valgrind ./main < input.txt
+              cd ..
       - name: check code with cpplint
         run: |
               cpplint *.c
