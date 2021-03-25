@@ -26,7 +26,7 @@ jobs:
       - name: check code with valgrind
         run: |
               cd Laba2
-              make -C
+              make
               valgrind ./horoscope
               
         
