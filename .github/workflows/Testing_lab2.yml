@@ -22,7 +22,19 @@ jobs:
         run: |
               sudo apt install valgrind
               sudo pip install cpplint 
-
+      - name: install conio.h
+        run: |
+              git clone https://github.com/zoelabbb/conio.h
+              cd conio.h
+              sudo mv conio.h /usr/include/
+              cd ..
+      - name: compiling and test 
+        run: |
+              make -C Laba2/
+          
+              
+              
+  
               
         
         
