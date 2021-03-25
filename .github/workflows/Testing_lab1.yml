@@ -39,4 +39,5 @@ jobs:
         run: |
               cd LABA1
               splint -retvalint -predboolint 1_2_22.c
+              splint -help
             
