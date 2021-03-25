@@ -32,7 +32,7 @@ int main()
     system("pause");
 }
 // size = size of future digit array
-/*@null@*/char* ToBinary(int num, int* size)
+char* ToBinary(int num, int* size)
 {
     *size = HowManyDigits(2, num);
     //there u should check if malloc do smth
