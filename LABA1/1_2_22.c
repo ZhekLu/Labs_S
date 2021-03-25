@@ -83,7 +83,7 @@ int is_sequence_ofpairs(char* num, int length)
         return findPair;
     }
 }
-//n - radix
+/*n - radix*/
 int HowManyDigits(int n, int number)
 {
     int counter = 0;
