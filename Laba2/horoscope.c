@@ -201,7 +201,7 @@ void ShowInfo(int* person)
         strcpy(zodiac, "Capricorn");
         break;
     } 
-    printf("Data of birth: %d.%d -- %s\n", person[1], person[2], &zodiac);
+    printf("Data of birth: %d.%d -- %s\n", person[1], person[2], zodiac);
 }
 
 void DataInput(int* person)
