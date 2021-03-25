@@ -1,3 +1,4 @@
 all:
-	gcc -o main horoscope.c
-	gcc -o test -Dmain=_main horoscope.c mytest.c
+	mkdir -p bin
+	gcc -o bin/main horoscope.c
+	gcc -o bin/test -Dmain=_main horoscope.c mytest.c
