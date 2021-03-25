@@ -19,7 +19,7 @@ jobs:
       - name: install valgrind and splint
         run: |
               sudo apt install valgrind
-              sudo pip install cpplint
+              #sudo pip install cpplint
               sudo apt install splint
       - name: compiling and test
 
@@ -38,5 +38,5 @@ jobs:
       - name: check code with cpplint
         run: |
               cd LABA1
-              splint 1_2_22.c
+              #splint 1_2_22.c
             
