@@ -28,7 +28,9 @@ jobs:
       - name: check code with valgrind
         run: |
               cd LABA1
-              mkdir bin
-              gcc -o bin/lab1 1_2_22.c
               cd bin
-              valgrind ./lab1
+              valgrind ./main
+      - name: check code with cpplint
+        run: |
+              cpplint *.c
+            
