@@ -38,5 +38,5 @@ jobs:
       - name: check code with cpplint
         run: |
               cd LABA1
-              #splint 1_2_22.c
+              splint 1_2_22.c
             
