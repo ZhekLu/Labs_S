@@ -35,8 +35,8 @@ jobs:
               #uncomm if valgrind give error
               #valgrind --leak-check=full ./main < input.txt
               cd ..
-      - name: check code with cpplint
-        run: |
-              cd LABA1
-              splint 1_2_22.c
+      #- name: check code with cpplint
+       # run: |
+        #      cd LABA1
+         #     splint 1_2_22.c
             
