@@ -236,7 +236,7 @@ void DataInput(int* person)
         }
         else  
         {
-            correctInput = ((char)input == '1' || (char)input == '2')? TRUE : FALSE; 
+            correctInput = (input == 1 || input == 2)? TRUE : FALSE; 
         }
         //input = getch();
     } while (!correctInput);
@@ -271,20 +271,20 @@ char Menu()
         }
         else
         {
-            if(input < 49 || input > 57)
-                printf("%c - is not valid input. U chould enter a number from 1 to 9.\n", (char)input); 
+            if(input < 1 || input > 9) //49-57
+                printf("%d - is not valid input. U chould enter a number from 1 to 9.\n", input); 
             else 
                 correctInput = TRUE;
         } 
     } while(!correctInput);
 
-    if((char)input == '1' || (char)input == '2')
+    if(input == 1 || input == 2)
     {
-        if((char)input == '1' && !firstPersEdited)
+        if(input == 1 && !firstPersEdited)
         {
             return '1';
         }
-        else if ((char)input == '2' && !secondPersEdited)
+        else if (input == 2 && !secondPersEdited)
         {
             return '2'; 
         }
@@ -303,19 +303,19 @@ char Menu()
                     correctInput = FALSE;
                     while(getchar() != '\n') {}
                 }
-                else if(tempInput < 49 || tempInput > 50)
+                else if(tempInput < 1 || tempInput > 2) //49-50
                     printf("%d - is not valid input. U chould enter 1 or 2.\n", input); 
                 else 
                     correctInput = TRUE; 
             } while (!correctInput);
-            return ((char)tempInput == '1')? (char)input : '0';
+            return (tempInput == 1)? (char)(input + (int)'0') : '0';
         }
     }
-    else if ((char)input >= '3' && (char)input <= '6')
+    else if (input >= 3 && (char)input <= 6)
     {
         if(secondPersEdited && firstPersEdited)
         {
-            return (char)input;
+            return (char)(input + (int)'0');
         }
         else 
         {
@@ -325,6 +325,6 @@ char Menu()
     }
     else 
     {
-        return (char)input; 
+        return (char)(input + (int)'0');
     }
 }
