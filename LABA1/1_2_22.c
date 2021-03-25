@@ -23,6 +23,7 @@ int main()
         {
             printf("|| %d is NOT a sequence of pairs: %s\n", m, bin_m);
         }
+        free(bin_m);
     }
     else printf("|Error||Uncorrect input.\n");
     system("pause");
