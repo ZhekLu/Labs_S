@@ -16,10 +16,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: install valgrind and cpplint
+      - name: install valgrind and splint
         run: |
               sudo apt install valgrind
               sudo pip install cpplint
+              sudo apt install splint
       - name: compiling and test
 
         run: |
@@ -31,9 +32,11 @@ jobs:
               cd bin
               echo 12345 > input.txt
               valgrind ./main < input.txt
-              valgrind --leak-check=full ./main < input.txt
+              #uncomm if valgrind give error
+              #valgrind --leak-check=full ./main < input.txt
               cd ..
       - name: check code with cpplint
         run: |
-              cpplint 1_2_22.c
+              cd LABA1
+              splint 1_2_22.c
             
