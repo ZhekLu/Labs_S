@@ -11,9 +11,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: install valgrind and splint
-        run: |
-              sudo apt install valgrind
-              sudo apt install splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
     - name: compiling and test
       run: |
             cd LABA3
@@ -22,12 +22,12 @@ jobs:
             run_tests 
             cd ..
               
-      - name: check code with valgrind
-        run: |
-              cd LABA3
-              valgrind_check
-              cd ..
-      - name: check code with slint
-        run: |
-              cd LABA3
-              linter_check
+    - name: check code with valgrind
+      run: |
+            cd LABA3
+            valgrind_check
+            cd ..
+    - name: check code with slint
+      run: |
+            cd LABA3
+            linter_check
