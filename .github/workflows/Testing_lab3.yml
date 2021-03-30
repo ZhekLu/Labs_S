@@ -17,17 +17,17 @@ jobs:
     - name: compiling and test
       run: |
             cd LABA3
-            main 
-            tests 
-            run_tests 
+            make main 
+            make tests 
+            make run_tests 
             cd ..
               
     - name: check code with valgrind
       run: |
             cd LABA3
-            valgrind_check
+            make valgrind_check
             cd ..
     - name: check code with slint
       run: |
             cd LABA3
-            linter_check
+            make linter_check
