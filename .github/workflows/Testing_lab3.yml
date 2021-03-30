@@ -1,0 +1,33 @@
+name: forLaba3
+on:
+  push:
+    branches: [ Lab3 ]
+  pull_request:
+    branches: [ Lab3 ]
+jobs: 
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: install valgrind and splint
+        run: |
+              sudo apt install valgrind
+              sudo apt install splint
+    - name: compiling and test
+      run: |
+            cd LABA3
+            main 
+            tests 
+            run_tests 
+            cd ..
+              
+      - name: check code with valgrind
+        run: |
+              cd LABA3
+              valgrind_check
+              cd ..
+      - name: check code with slint
+        run: |
+              cd LABA3
+              linter_check
