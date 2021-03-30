@@ -65,7 +65,7 @@ void DiagonalSortArr(int** array, int rows, int cols)
     if(rows > 1)
         for(startDot = 1; startDot < rows - 1; startDot++)
         {
-            int diagonalLen = (rows - 1 - startDot <= cols)? rows - 1 - startDot : cols; 
+            int diagonalLen = (rows - 1 - startDot <= cols)? rows - startDot : cols; 
             int n;
             for (n = 0; n < diagonalLen - 1; n++)
             {
