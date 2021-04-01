@@ -38,6 +38,6 @@ jobs:
       - name: check code with cpplint
         run: |
               cd LABA1
-              splint -retvalint -predboolint -compdef -incondefs 1_2_22.c
+              #splint -retvalint -predboolint -compdef -incondefs 1_2_22.c
               #splint -help
             
