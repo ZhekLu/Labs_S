@@ -17,7 +17,7 @@ jobs:
             sudo apt install splint
     - name: compiling and test TASK 1
       run: |
-            make makefile task1
+            make task1
             make test1
             
     - name: check code with valgrind
