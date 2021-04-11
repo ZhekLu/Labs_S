@@ -16,8 +16,8 @@ jobs:
             sudo apt install valgrind
             sudo apt install splint
     - name: compiling and test TASK 1
-      working-directory: ./LABA4
       run: |
+            cd LABA4
             make task1
             make test1
             
