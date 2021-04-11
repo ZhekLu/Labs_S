@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ Lab4 ]
 jobs: 
-  testing task 1:
+  task1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
       run: |
             cd LABA4
             make splint_test1
-  testing task 2:
+  task2:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
