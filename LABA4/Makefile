@@ -17,7 +17,7 @@ splint_test1:
 	splint 4_1.c
 
 splint_test2:
-	splint -predboolint -retvalint -mustfreefresh 4_2.c 
+	splint -predboolint -usedef -retvalint -mustfreefresh 4_2.c 
 
 
 
