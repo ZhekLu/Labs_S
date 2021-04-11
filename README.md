@@ -1,4 +1,4 @@
-# Labs_S Laba 3
+# Labs_S
 
 
 Status of Last Deployment: 
