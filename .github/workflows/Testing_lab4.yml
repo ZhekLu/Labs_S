@@ -1,0 +1,55 @@
+  
+name: forLaba4
+on:
+  push:
+    branches: [ Lab4 ]
+  pull_request:
+    branches: [ Lab4 ]
+jobs: 
+  task1:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
+    - name: compiling and test
+      run: |
+            cd LABA4
+            make task1
+            make test1
+            
+    - name: check code with valgrind
+      run: |
+            cd LABA4
+            echo 345 > input.txt
+            echo 5 >> input.txt 
+            valgrind ./task1 < input.txt 
+    - name: check code with slint
+      run: |
+            cd LABA4
+            make splint_test1
+  task2:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
+    - name: compiling and test
+      run: |
+            cd LABA4
+            make task2
+            make test2
+              
+    - name: check code with valgrind
+      run: |
+            cd LABA4
+            valgrind ./task2
+    - name: check code with slint
+      run: |
+            cd LABA4
+            make splint_test2
