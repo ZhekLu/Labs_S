@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ Lab4 ]
 jobs: 
-  testing:
+  testing task 1:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
       run: |
             sudo apt install valgrind
             sudo apt install splint
-    - name: compiling and test TASK 1
+    - name: compiling and test
       run: |
             cd LABA4
             make task1
@@ -31,7 +31,15 @@ jobs:
       run: |
             cd LABA4
             make splint_test1
-    - name: compiling and test TASK2
+  testing task 2:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
+    - name: compiling and test
       run: |
             cd LABA4
             make task2
@@ -44,4 +52,4 @@ jobs:
     - name: check code with slint
       run: |
             cd LABA4
-            splint_test2
+            make splint_test2
