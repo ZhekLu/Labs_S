@@ -1,4 +1,4 @@
-all: comFunTest
+all: comFunTest test task splint_test
 
 comFunTest:
 	gcc -std=c89 -o comtest -Dmain=_main compare.c compTest.c exponentation.c

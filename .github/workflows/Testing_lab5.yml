@@ -1,0 +1,33 @@
+name: forLaba5
+on:
+  push:
+    branches: [ Lab5 ]
+  pull_request:
+    branches: [ Lab5 ]
+jobs: 
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
+    - name: compiling and test
+      run: |
+            cd LABA5
+            make task
+            make comFunTest
+            make test
+            
+    - name: check code with valgrind
+      run: |
+            cd LABA5
+            echo 345 > input.txt
+            valgrind ./program < input.txt 
+            
+    - name: check code with slint
+      run: |
+            cd LABA5
+            make splint_test
