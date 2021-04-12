@@ -14,7 +14,7 @@ test1:
 	gcc -std=c89 -o test1 -Dmain=_main test1.c declensionOfNumber.c numberDeclensionFun.c
 
 splint_test1:
-	splint 4_1.c
+	splint +posixlib -compdef -syntax -retvalint 4_1.c
 
 splint_test2:
 	splint -predboolint -usedef -retvalint -mustfreefresh 4_2.c 
