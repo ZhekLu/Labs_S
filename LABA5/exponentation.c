@@ -10,7 +10,7 @@ MultiNum CreateNum(char* str){
 
 void push_front(MultiNum* num, int digit){
     Item*x = (Item*)malloc(sizeof(Item)); 
-    if(!)
+    if(!X)
         return; 
     x->digit = digit; 
     x->ptrPrev = x->ptrNext = NULL;
