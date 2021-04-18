@@ -16,6 +16,7 @@ typedef struct multiNum {
 
 MultiNum CreateNum(char* str);
 void push_front(MultiNum* num, int digit);
+void push_back(MultiNum* num, int digit);
 MultiNum ThreePower(int pow);
 void ShowNum(const MultiNum* num);
 void Delete(MultiNum* num);
