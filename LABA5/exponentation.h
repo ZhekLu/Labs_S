@@ -19,3 +19,5 @@ void push_front(MultiNum* num, int digit);
 MultiNum ThreePower(int pow);
 void ShowNum(const MultiNum* num);
 void Delete(MultiNum* num);
+void Multiply(MultiNum* first, MultiNum* second);
+MultiNum BinPow(MultiNum num, int pow);
