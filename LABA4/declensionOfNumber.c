@@ -14,11 +14,11 @@ int HowManyDigits(int number)
 
 }
 
-void Add(char** to, int* to_len, char from[], int from_len)
+int Add(char** to, int* to_len, char from[], int from_len)
 {
     char* newTo = (char*)malloc((*to_len) + from_len + 2);
     if(!newTo)
-        return;
+        return 0;
     int i, j;
     for(i = 0; i < from_len; i++)
     {
