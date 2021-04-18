@@ -8,9 +8,16 @@ int main() {
         printf("Try again.\n");
         while(getchar() != (int)'\n'){}
     }
-    MultiNum num = ThreePower(pow);
-    printf("|||Result: "); 
-    ShowNum(&num);
-    Delete(&num);
+    MultiNum num1 = ThreePower(pow);
+    printf("|ThreePower||Result: "); 
+    ShowNum(&num1);
+
+    MultiNum temp = CreateNum("3");
+    MultiNum num2 = BinPow(temp, pow);
+    printf("\n|BinaryPower||Result: "); 
+    ShowNum(&num2);
+
+    Delete(&num1);
+    Delete(&num2);
     return 0;
 }
