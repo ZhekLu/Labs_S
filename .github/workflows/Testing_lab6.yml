@@ -1,0 +1,33 @@
+name: forLaba6
+on:
+  push:
+    branches: [ Lab6 ]
+  pull_request:
+    branches: [ Lab6 ]
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
+    - name: compiling and test
+      run: |
+            cd LABA6
+            make task
+            
+    - name: check code with valgrind
+      run: |
+            cd LABA6
+            echo 1 > input.txt
+            echo "3 1 4 5 2 7" >> input.txt
+            echo 3 >> input.txt
+            echo 5 >> input.txt
+            valgrind ./program < input.txt 
+    - name: check code with slint
+      run: |
+            cd LABA6
+            make splint
