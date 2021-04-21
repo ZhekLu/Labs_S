@@ -1,6 +1,13 @@
 #include "bintree.h"
 #include <string.h>
 
+void freeTree(bintree** root){
+    if((*root)->left)
+        freeTree(&((*root)->left)); 
+    if((*root)->right)
+        freeTree(&((*root)->right));
+    free(*root);
+}
 
 void createTree(char* str, bintree** root){
     char delimiters[] = " ,./!?;";

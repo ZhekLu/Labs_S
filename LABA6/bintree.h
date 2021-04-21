@@ -7,8 +7,9 @@ typedef struct bintree{
     int digit;
 } bintree;
 
-void AddNode(int digit, bintree** root); 
-void LeftOrder(bintree* root);  
-void RightOrder(bintree* root);
+void AddNode(int digit, /*@null@*/bintree** root); 
+void LeftOrder(/*@null@*/bintree* root);  
+void RightOrder(/*@null@*/bintree* root);
 int Menu();
 void createTree(char* str, bintree** root); 
+void freeTree(bintree** root);

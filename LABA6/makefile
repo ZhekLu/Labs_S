@@ -6,3 +6,6 @@ task:
 test:
 	gcc -std=c89 -o test -Dmain=_main bintree.c test.c
 
+splint:
+	splint -boolops -predboolint lab6.c
+
