@@ -18,7 +18,7 @@ jobs:
       run: |
             cd LABA6
             make task
-            #make test
+            make test
             #./test
             
     - name: check code with valgrind
