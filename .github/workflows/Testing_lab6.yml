@@ -21,6 +21,10 @@ jobs:
             make test
             #./test
             
+    - name: testing
+      run: |
+            cd LABA6
+            ./test
     - name: check code with valgrind
       run: |
             cd LABA6
