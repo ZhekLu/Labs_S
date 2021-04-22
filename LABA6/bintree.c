@@ -37,6 +37,8 @@ void AddNode(int digit, bintree** root){
 }
 
 void LeftOrder(bintree* root){
+    if(!root)
+        return; 
     if(root->left)
         LeftOrder(root->left);
     printf("%d\t", root->digit);
@@ -45,6 +47,8 @@ void LeftOrder(bintree* root){
 }
 
 void RightOrder(bintree* root){
+    if(!root)
+        return;
     if(root->right)
         RightOrder(root->right);
     printf("%d\t", root->digit);
