@@ -1,7 +1,7 @@
 #include "bintree.h"
 #include <assert.h>
 
-int test_AddNode(){
+void test_AddNode(){
     bintree* root = NULL;
     AddNode(2, &root);
     assert(root->digit == 2);
@@ -11,7 +11,7 @@ int test_AddNode(){
     assert(root->right->digit == 3);
 }
 
-int test_CreateTree(){
+void test_CreateTree(){
     char str[] = "2 1 3";
     bintree* root = NULL;
     createTree(str, &root);
@@ -25,4 +25,5 @@ int main(){
     test_AddNode();
     test_CreateTree();
     printf("Passed.\n");
+    return 0;
 }
