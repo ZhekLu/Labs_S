@@ -13,13 +13,14 @@ int main()
     pid_t pid; 
     struct rlimit rl;
     int finished = 0;
-    int limits = 1;  
-    int rv; 
+    int limits = 0;  
+    int rv = 0; 
 
     bintree* root = NULL; 
-    char str[] = "5 2 7 4 9 10 3 2 0"; 
+    char str[] = "5 2 7 4 9 10 3 2 0 1 2 3 4 5 6 8 10 55 6 7"; 
     while(!finished)
     {
+        limits += 1;
         switch(pid = fork())
         {
             case -1: printf("Error!\n");
@@ -31,13 +32,12 @@ int main()
                 freeTree(&root);
                 exit(rv);
             default:
-                wait(0);
+                wait(&rv);
                 /*WEXITSTATUS*/
-                if(WEXITSTATUS(rv))
+                if(rv)
                     finished = 1;
 
-        }
-        limits += 1; 
+        } 
     }
     printf("Require memory: %d\n", limits); 
     return 0;
