@@ -27,17 +27,17 @@ int main()
             case 0:
                 rl.rlim_cur = limits;
                 setrlimit(RLIMIT_AS, &rl); 
-                limits += 1; 
                 rv = createTree(str, &root);
                 freeTree(&root);
-                exit(0);
+                exit(rv);
             default:
                 wait(0);
                 /*WEXITSTATUS*/
-                if(rv)
+                if(WEXITSTATUS(rv))
                     finished = 1;
 
         }
+        limits += 1; 
     }
     printf("Require memory: %d\n", limits); 
     return 0;
