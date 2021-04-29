@@ -9,3 +9,6 @@ test:
 splint:
 	splint -boolops -predboolint lab6.c
 
+memtest: 
+	gcc -std=c89 -o memtest bintree.c memoryTest.c 
+

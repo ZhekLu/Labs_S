@@ -2,6 +2,8 @@
 #include <string.h>
 
 void freeTree(bintree** root){
+    if(!root)
+        return; 
     if((*root)->left)
         freeTree(&((*root)->left)); 
     if((*root)->right)
@@ -9,24 +11,29 @@ void freeTree(bintree** root){
     free(*root);
 }
 
-void createTree(char* str, bintree** root){
+int createTree(char* str, bintree** root){
     char delimiters[] = " ,./!?;";
     char* ptr = strtok(str, delimiters);
     int temp = 0;
     while(ptr){
         temp = atoi(ptr); 
         if(temp)
-            AddNode(temp, root); 
+            if(!AddNode(temp, root))
+                return 0; 
         ptr = strtok(NULL, delimiters); 
     } 
+    return 1; 
 }
 
-void AddNode(int digit, bintree** root){
+int AddNode(int digit, bintree** root){
     if(!*root){
         *root = (bintree*)malloc(sizeof(bintree));
+        if(!root)
+            return 0;
         (*root)->left = NULL;
         (*root)->right = NULL;
-        (*root)->digit = digit; 
+        (*root)->digit = digit;
+        return 1;  
     }
     else{
         if ((*root)->digit > digit)
