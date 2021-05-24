@@ -24,7 +24,8 @@ jobs:
             echo 4 >> input.txt
             echo 3 >> input.txt
             #./testA < input.txt
-            Get-Content input.txt | .\testA
+            #Get-Content input.txt | .\testA
+            cmd /c '.\test_cfdp.exe < test.full' 
             ./testB
 
             make testAreport
