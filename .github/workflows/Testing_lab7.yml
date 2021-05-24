@@ -23,7 +23,7 @@ jobs:
             echo 1 > input.txt
             echo 4 >> input.txt
             echo 3 >> input.txt
-            input.txt > ./testA
+            ./testA < input.txt
             ./testB
 
             make testAreport
