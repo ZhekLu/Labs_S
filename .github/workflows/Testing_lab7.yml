@@ -24,6 +24,7 @@ jobs:
             echo 4 >> input.txt
             echo 3 >> input.txt
             #./testA < input.txt
+            Get-Content input.txt | .\testA
             ./testB
 
             make testAreport
