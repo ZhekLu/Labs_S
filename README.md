@@ -10,5 +10,5 @@ Status of Last Deployment:
 [![Status](https://github.com/ZhekLu/Labs_S/workflows/forLaba4/badge.svg?branch=Lab4)](https://github.com/ZhekLu/Labs_S/actions/workflows/Testing_lab4.yml)
 [![Status](https://github.com/ZhekLu/Labs_S/workflows/forLaba5/badge.svg?branch=Lab5)](https://github.com/ZhekLu/Labs_S/actions/workflows/Testing_lab5.yml)
 [![Status](https://github.com/ZhekLu/Labs_S/workflows/forLaba6/badge.svg?branch=Lab6)](https://github.com/ZhekLu/Labs_S/actions/workflows/Testing_lab6.yml)
-[![Status](https://github.com/ZhekLu/Labs_S/workflows/forLaba6/badge.svg?branch=Lab7)](https://github.com/ZhekLu/Labs_S/actions/workflows/Testing_lab7.yml)
+[![Status](https://github.com/ZhekLu/Labs_S/workflows/forLaba7/badge.svg?branch=Lab7)](https://github.com/ZhekLu/Labs_S/actions/workflows/Testing_lab7.yml)
 
