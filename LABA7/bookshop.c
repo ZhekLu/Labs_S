@@ -11,10 +11,20 @@ int AddBooks(char* filename, Shop* sh)
         return 0; 
     int quantity = atoi(buff);
     if(sh->books)
+    {
         free(sh->books);
+        sh->books = NULL; 
+        sh->booksQuantity = 0;
+        sh->bookTypeQuantity = 0;
+        sh->totalCost = 0;
+    }
     sh->books = (Book**)malloc(sizeof(Book*) * quantity);
-    if(!sh->books)
+    if(!sh->books) /*impossible*/
+    {
+        printf("break on first malloc;"); //del
         return 0; 
+    }
+    printf("Don't break"); 
     // Name - Author - qu(i) - prpr(i) - slpr(i)
     int counter = 0;
     for(; counter < quantity; counter++)
@@ -25,6 +35,7 @@ int AddBooks(char* filename, Shop* sh)
         Book* tempbook = (Book*)malloc(sizeof(Book));
         if(!tempbook)
         {
+            printf("break on second malloc;"); //del
             if(sh->books)
             {
                 free(sh->books);

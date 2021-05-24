@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "deal.h"
-#include "answer.h" //for menu; 
+
 // #include "book.h"
 
 typedef struct book

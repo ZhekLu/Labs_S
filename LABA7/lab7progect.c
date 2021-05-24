@@ -1,5 +1,6 @@
 #include "bookshop.h"
 #include "shopmode.h"
+#include "answer.h"
 int main()
 {
     NEWSHOP(sh);
