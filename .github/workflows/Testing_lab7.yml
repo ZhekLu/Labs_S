@@ -20,7 +20,7 @@ jobs:
     - name: testing
       run: |
             cd LABA7
-            echo 1 > input.txt
+            echo 0 > input.txt
             echo 4 >> input.txt
             echo 3 >> input.txt
             #./testA < input.txt
