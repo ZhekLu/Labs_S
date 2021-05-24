@@ -11,5 +11,5 @@ int getAnswer(int from, int to)
         // else 
             correctInput = 1; 
     }
-    return input; 
+    return input - '0'; 
 }

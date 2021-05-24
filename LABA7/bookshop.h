@@ -1,12 +1,15 @@
 #pragma once
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "deal.h"
+#include "answer.h" //for menu; 
 // #include "book.h"
 
 typedef struct book
 {
-    char author[30];
     char name[30];
+    char author[30];
     unsigned int quantity;
     unsigned int purchasePrice;
     unsigned int salesPrice;
@@ -18,7 +21,7 @@ typedef struct shop
     unsigned int totalCost; 
     unsigned int dealsQuantity; 
     unsigned int buyedBooksQuantity;
-    int revenue; //общая выручка
+    // int revenue; //общая выручка
 
     int bookTypeQuantity;
     Book** books; 
@@ -27,4 +30,10 @@ typedef struct shop
     Deal* currDeal; 
 }Shop; 
 
-#define NEWSHOP(X) Shop X = {0, 0, 0, 0, 0, 0, NULL, NULL, NULL}
+#define NEWSHOP(X) Shop X = {0, 0, 0, 0, 0, NULL, NULL, NULL}
+
+// void ShowBook(const Book* bk);
+// void ShowDeal(const Deal* dl);
+
+void CheckOutDeal(Shop* sh);
+int AddBooks(char* filename, Shop* sh); 

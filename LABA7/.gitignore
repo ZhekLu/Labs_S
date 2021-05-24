@@ -3,3 +3,4 @@ program*
 test*
 *.json
 book.*
+/.vscode
