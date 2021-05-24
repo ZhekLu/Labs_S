@@ -1,0 +1,29 @@
+name: forLaba7
+on:
+  push:
+    branches: [ Lab7 ]
+  pull_request:
+    branches: [ Lab7 ]
+jobs: 
+  test:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: compiling and test
+      run: |
+            cd LABA7
+            make
+            make testA
+            make testB
+            
+    - name: testing
+      run: |
+            cd LABA7
+            
+            ./testA
+            ./testB
+
+            make testAreport
+            make testBreport
+
