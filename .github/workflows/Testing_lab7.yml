@@ -45,7 +45,7 @@ jobs:
             rm *.gc*
             make testBlim
             ./testBlim
-            make testBllimreport
+            make testBlimreport
 
     - name: Upload results for memory 
       uses: codecov/codecov-action@v1
