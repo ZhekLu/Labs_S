@@ -54,7 +54,6 @@ int AddBooks(char* filename, Shop* sh)
         Book* tempbook = (Book*)malloc(sizeof(Book));
         if(!tempbook)
         {
-            printf("break on second malloc;"); //del
             if(sh->books)
             {
                 int i = 0;
@@ -63,8 +62,8 @@ int AddBooks(char* filename, Shop* sh)
                         free(sh->books[i]);  
                 free(sh->books);
                 sh->books = NULL; 
-                return 0; 
             }
+            return 0; 
         }
         strcpy(tempbook->name, buff);
         fgets(buff, 128, fl);
