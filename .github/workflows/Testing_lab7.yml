@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
+    - name: install valgrind and splint
+      run: |
+            sudo apt install valgrind
+            sudo apt install splint
     - name: compiling and test
       run: |
             cd LABA7
@@ -25,6 +28,7 @@ jobs:
             echo 4 >> input.txt
             echo 3 >> input.txt
             ./testA < input.txt
+            rm input.txt
             #Get-Content input.txt | .\testA
             #cmd /c '.\testA.exe < input.txt' 
             ./testB
@@ -55,7 +59,12 @@ jobs:
 
     - name: splint test
       run: |
-            sudo apt-get install splint
             cd LABA7
             splint -nullassign -boolops -retvalint -predboolint -compdestroy -nullderef +ignoresigns -usedef -nullstate lab7progect.c  
 
+    - name: valgrind test
+      run: |
+            cd LABA7
+            echo "1\n1\n2\n5\n3\n3\n4\n3\n" > input.txt
+            valgrind ./shop < input.txt
+            rm input.txt
