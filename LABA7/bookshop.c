@@ -2,10 +2,11 @@
 
 void FreeShop(Shop* sh)
 {
-    int q = sh->booksQuantity;
+    int q = sh->bookTypeQuantity;
     int i = 0;
     for(; i < q; i++)
-        free(sh->books[i]);  
+        if(sh->books[i])
+            free(sh->books[i]);  
     free(sh->books); 
     sh->books = NULL; 
     sh->deals = CleanDealsHistory(sh->deals);
