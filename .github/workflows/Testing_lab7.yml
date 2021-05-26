@@ -42,6 +42,7 @@ jobs:
        files: |
          ./LABA7/bookshop.c.gcov
          ./LABA7/answer.c.gcov
+         ./LABA7/deal.c.gcov
 
     - name: Testing memory
       run: |
