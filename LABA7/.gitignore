@@ -1,0 +1,8 @@
+*.exe
+program* 
+// test*
+*.json
+book.*
+/.vscode
+*.gc*
+/limitspricol
