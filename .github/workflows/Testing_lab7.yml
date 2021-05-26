@@ -30,4 +30,10 @@ jobs:
 
             make testAreport
             make testBreport
+            
+    - name: Upload
+      uses: codecov/codecov-action@v1
+      with: 
+       files: |
+         ./bookshop.c.gcov
 
