@@ -6,7 +6,7 @@ on:
     branches: [ Lab7 ]
 jobs: 
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
@@ -20,20 +20,22 @@ jobs:
     - name: testing
       run: |
             cd LABA7
-            echo 0 > input.txt
+            echo "ss" > input.txt
+            echo 0 >> input.txt
             echo 4 >> input.txt
             echo 3 >> input.txt
-            #./testA < input.txt
+            ./testA < input.txt
             #Get-Content input.txt | .\testA
-            cmd /c '.\testA.exe < input.txt' 
+            #cmd /c '.\testA.exe < input.txt' 
             ./testB
 
             make testAreport
             make testBreport
             
-    - name: Upload
+    - name: Upload results
       uses: codecov/codecov-action@v1
       with: 
        files: |
          ./LABA7/bookshop.c.gcov
+         ./LABA7/answer.c.gcov
 
