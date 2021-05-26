@@ -19,7 +19,7 @@ int AddBooks(char* filename, Shop* sh)
         sh->totalCost = 0;
     }
     sh->books = (Book**)malloc(sizeof(Book*) * quantity);
-    if(!sh->books) /*impossible*/
+    if(sh->books == NULL) /*impossible*/
     {
         printf("break on first malloc;"); //del
         return 0; 
