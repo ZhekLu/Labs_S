@@ -4,7 +4,11 @@
 int main()
 {
     NEWSHOP(sh);
-    AddBooks("books.txt", &sh); 
+    if(!AddBooks("books.txt", &sh))
+    {
+        printf("Smth comes wrong!");
+        return 0;
+    }
     int quantity = sh.bookTypeQuantity;
     int counter = 0; //for menu
     Deal* temp = NULL; //for menu
@@ -255,5 +259,6 @@ int main()
             }
         }
     }
+    temp = NULL; 
     FreeShop(&sh);
 }

@@ -1,5 +1,5 @@
 all:
-	gcc -o shop answer.c bookshop.c deal.c lab7progect.c
+	gcc -o shop answer.c bookshop.c lab7progect.c
 testA:
 	gcc -ftest-coverage -fprofile-arcs -O0 -o testA test_answerLIB.c answer.c
 testAreport:

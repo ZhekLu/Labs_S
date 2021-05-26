@@ -68,6 +68,10 @@ int AddBooks(char* filename, Shop* sh)
             printf("break on second malloc;"); //del
             if(sh->books)
             {
+                int i = 0;
+                for(; i < quantity; i++)
+                    if(sh->books[i])
+                        free(sh->books[i]);  
                 free(sh->books);
                 sh->books = NULL; 
                 return 0; 
