@@ -12,3 +12,6 @@ testBlim:
 	gcc -ftest-coverage -fprofile-arcs -O0 -o testBlim test_bookshopLIB_withlimits.c bookshop.c
 testBlimreport: 
 	gcov -abcfu bookshop.c
+
+testBlimtest:
+	gcc -o testBlimtest book.c
