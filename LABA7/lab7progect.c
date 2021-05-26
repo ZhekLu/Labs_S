@@ -32,6 +32,8 @@ int main()
                 mode = DealsMenu;
                 break;
             case 3:
+                temp = NULL;
+                FreeShop(&sh);
                 return 0;
             }
         }
@@ -136,6 +138,7 @@ int main()
                 }
                 case 3:
                     mode = BookMenu;
+                    break;
                 case 4:
                     if(counter == quantity - 1)
                         counter = 0;
@@ -153,15 +156,15 @@ int main()
             char symbs[30], firstsymb, secsymb;
             if(/*(firstsymb = getchar()) == EOF*/scanf("%s", symbs) != 1)
             {
-                while(getchar() != '\n'){}
+                while(getchar() != (int)'\n'){}
                 firstsymb = 'a';
             }
             // else  getchar();
             firstsymb = symbs[0];
             if(firstsymb >= 'A' && firstsymb < 'a')
-                secsymb = firstsymb + 32;
+                secsymb = (char)((int)firstsymb + 32);
             else 
-                secsymb = firstsymb - 32; 
+                secsymb = (char)((int)firstsymb - 32); 
             printf("Book named started with %c: ", firstsymb);
             // int quantity = sh.booksQuantity; 
             int i = 0;
@@ -177,7 +180,7 @@ int main()
             {
             case 1:
                 mode = BookMenu;
-            
+                break;
             case 2:
                 break;
             }
@@ -217,6 +220,7 @@ int main()
                     break;
                 case 2:
                     mode = DealsMenu;
+                    break;
                 case 3:
                     if(temp->ptrNext)
                         temp = temp->ptrNext;
@@ -234,15 +238,15 @@ int main()
             if(scanf("%d", &firstsymb) != 1)
             {
                 firstsymb = 1;
-                while(getchar() != '\n'){}
+                while(getchar() != (int)'\n'){}
             }
             else  
                 getchar();
             printf("Deals with min book quantity ___%d____:", firstsymb);
-            int quantity = sh.dealsQuantity; 
+            int dquantity = sh.dealsQuantity; 
             int i = 0; 
             Deal* tempdlformenu = sh.deals;
-            for(; i < quantity; i++)
+            for(; i < dquantity; i++)
             {
                 if(tempdlformenu->booksQuantity == firstsymb)
                 {
@@ -254,12 +258,10 @@ int main()
             {
             case 1:
                 mode = DealsMenu;
-            
+                break;
             case 2:
                 break;
             }
         }
     }
-    temp = NULL; 
-    FreeShop(&sh);
 }

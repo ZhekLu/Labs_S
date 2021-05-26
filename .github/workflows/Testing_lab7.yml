@@ -57,5 +57,5 @@ jobs:
       run: |
             sudo apt-get install splint
             cd LABA7
-            splint -nullassign -boolops -retvalint -predboolint -compdestroy +ignoresigns lab7progect.c 
+            splint -nullassign -boolops -retvalint -predboolint -compdestroy -nullderef +ignoresigns -usedef -nullstate lab7progect.c  
 
