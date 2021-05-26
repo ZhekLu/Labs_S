@@ -35,5 +35,5 @@ jobs:
       uses: codecov/codecov-action@v1
       with: 
        files: |
-         ./bookshop.c.gcov
+         ./LABA7/bookshop.c.gcov
 
