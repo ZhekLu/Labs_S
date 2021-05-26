@@ -66,6 +66,13 @@ jobs:
     - name: valgrind test
       run: |
             cd LABA7
-            echo "1\n1\n2\n5\n3\n3\n4\n3\n" > input.txt
+            echo 1 > input.txt
+            echo 1 >> input.txt
+            echo 2 >> input.txt
+            echo 5 >> input.txt
+            echo 3 >> input.txt
+            echo 3 >> input.txt
+            echo 4 >> input.txt
+            echo 3 >> input.txt
             valgrind ./shop < input.txt
             rm input.txt
