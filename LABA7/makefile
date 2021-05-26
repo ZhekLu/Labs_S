@@ -14,9 +14,7 @@ testBreport:
 	gcov -abcfu deal.c
 
 testBlim:
-	gcc -ftest-coverage -fprofile-arcs -O0 -o testBlim test_bookshopLIB_withlimits.c bookshop.c
+	gcc -ftest-coverage -fprofile-arcs -O0 -o testBlim test_bookshopLIB_withlimits.c bookshop.c deal.c
 testBlimreport: 
 	gcov -abcfu bookshop.c
 
-testC:
-	gcc -ftest-coverage -fprofile-arcs -O0 -o testB test_dealLIB.c deal.c
