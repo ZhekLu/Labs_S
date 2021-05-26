@@ -20,6 +20,7 @@ int main()
     assert(sh.bookTypeQuantity == 3);
     assert(sh.booksQuantity == 10 + 15 + 5);
     assert(sh.totalCost == 10*1 + 15*3 + 5*10);
+    printf("\n|PASSED| AddBooks();");
     //----------------------Test function CheckOutDeal(Shop*)-------------------------
     int quantity = 4; 
     //branch1
@@ -65,7 +66,34 @@ int main()
     CheckOutDeal(&sh);
     assert(sh.currDeal == NULL);
     assert((sh.deals->ptrNext->ptrNext) == testdeal); 
-//--------------------------------------------------------------------------------------------
-    
-    printf("Complete"); 
+    printf("\n|PASSED| CheckOutDeal();");
+    //----------------Test function CleanDealsHistory(Deal* dl)----------------
+    assert(CleanDealsHistory(NULL) == NULL);
+    free(sh.deals->ptrNext->buyedBooks);
+    sh.deals->ptrNext->buyedBooks = NULL; 
+    assert((sh.deals = CleanDealsHistory(sh.deals)) == NULL);
+    printf("\n|PASSED| CleanDealsHistory();");
+    //----------------Test function FreeShop(Shop* sh)----------------
+    FreeShop(&sh);
+    assert(sh.books == NULL);
+    assert(sh.booksQuantity == 0);
+    assert(sh.bookTypeQuantity == 0);
+    assert(sh.buyedBooksQuantity == 0);
+    assert(sh.dealsQuantity == 0);
+    assert(sh.totalCost == 0);
+    assert(sh.deals == NULL);
+    //for sh->currDeal
+    testdeal = (Deal*)malloc(sizeof(Deal));
+    testdeal->booksQuantity = 3; 
+    testdeal->buyedBooks = (int*)malloc(sizeof(int)*quantity);
+    for(i = 0; i < quantity; i++)
+        testdeal->buyedBooks[i] = 0;
+    testdeal->buyedBooks[1] = 3; 
+    testdeal->ptrNext = testdeal->ptrPrev = NULL; 
+    sh.currDeal = testdeal;
+    //
+    FreeShop(&sh);
+    assert(sh.currDeal == NULL);
+    printf("\n|PASSED| FreeShop();");
+    printf("\n---------Complete------------\n"); 
 }
