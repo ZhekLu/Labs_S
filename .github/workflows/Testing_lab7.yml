@@ -39,3 +39,17 @@ jobs:
          ./LABA7/bookshop.c.gcov
          ./LABA7/answer.c.gcov
 
+    - name: Testing memory
+      run: |
+            cd LABA7
+            rm *.gc*
+            make testBlim
+            ./testBlim
+            make testBllimreport
+
+    - name: Upload results for memory 
+      uses: codecov/codecov-action@v1
+      with: 
+       files: |
+         ./LABA7/bookshop.c.gcov
+
