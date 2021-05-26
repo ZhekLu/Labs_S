@@ -38,4 +38,3 @@ typedef struct shop
 void CheckOutDeal(Shop* sh);
 int AddBooks(char* filename, Shop* sh); 
 void FreeShop(Shop* sh);
-Deal* CleanDealsHistory(Deal* dl);

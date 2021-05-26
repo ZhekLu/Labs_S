@@ -19,17 +19,6 @@ void FreeShop(Shop* sh)
     sh->buyedBooksQuantity = sh->dealsQuantity = sh->totalCost = 0;
 }
 
-Deal* CleanDealsHistory(Deal* dl)
-{
-    if(!dl)
-        return NULL; 
-    if(dl->ptrNext)
-        dl->ptrNext = CleanDealsHistory(dl->ptrNext);
-    if(dl->buyedBooks)
-        free(dl->buyedBooks);
-    free(dl);
-    return NULL;
-}
 
 int AddBooks(char* filename, Shop* sh)
 {

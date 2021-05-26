@@ -9,3 +9,5 @@ typedef struct deal
 }Deal; 
 
 #define NEWDEAL(X) (Deal* X = (Deal*)malloc(sizeof(Deal)); *X = (Deal){0, NULL, NULL, NULL})
+
+Deal* CleanDealsHistory(Deal* dl);
