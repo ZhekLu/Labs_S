@@ -1,5 +1,5 @@
 all:
-	gcc -o shop answer.c bookshop.c lab7progect.c
+	gcc -o shop answer.c bookshop.c lab7progect.c deal.c
 
 
 testA:
