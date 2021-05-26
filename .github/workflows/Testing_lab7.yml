@@ -53,3 +53,8 @@ jobs:
        files: |
          ./LABA7/bookshop.c.gcov
 
+    - name: splint test
+      run: |
+            cd LABA7
+            splint -nullassign -boolops -retvalint -predboolint -compdestroy +ignoresigns lab7progect.c 
+
