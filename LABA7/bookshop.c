@@ -1,5 +1,34 @@
 #include "bookshop.h"
 
+void FreeShop(Shop* sh)
+{
+    int q = sh->booksQuantity;
+    int i = 0;
+    for(; i < q; i++)
+        free(sh->books[i]);  
+    free(sh->books); 
+    sh->books = NULL; 
+    sh->deals = CleanDealsHistory(sh->deals);
+    if(sh->currDeal)
+    {
+        free(sh->currDeal);
+        sh->currDeal = NULL;
+    }
+    sh->booksQuantity = sh->bookTypeQuantity = 0;
+    sh->buyedBooksQuantity = sh->dealsQuantity = sh->totalCost = 0;
+}
+
+Deal* CleanDealsHistory(Deal* dl)
+{
+    if(!dl)
+        return NULL; 
+    if(dl->ptrNext)
+        dl->ptrNext = CleanDealsHistory(dl->ptrNext);
+    if(dl->buyedBooks)
+        free(dl->buyedBooks);
+    free(dl);
+    return NULL;
+}
 
 int AddBooks(char* filename, Shop* sh)
 {
