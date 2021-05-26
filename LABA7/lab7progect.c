@@ -145,20 +145,24 @@ int main()
             system("cls");
             printf("\n\tMAIN MENU->BOOKS->SEARCH");
             printf("\nEnter the first letter of book name: ");
-            char firstsymb;
-            if(scanf("%c", &firstsymb) != 1)
+            char symbs[30], firstsymb, secsymb;
+            if(/*(firstsymb = getchar()) == EOF*/scanf("%s", symbs) != 1)
             {
-                firstsymb = 'a';
                 while(getchar() != '\n'){}
+                firstsymb = 'a';
             }
-            else  
-                getchar();
-            printf("Book named started with ___%c____:", firstsymb);
-            int quantity = sh.booksQuantity; 
+            // else  getchar();
+            firstsymb = symbs[0];
+            if(firstsymb >= 'A' && firstsymb < 'a')
+                secsymb = firstsymb + 32;
+            else 
+                secsymb = firstsymb - 32; 
+            printf("Book named started with %c: ", firstsymb);
+            // int quantity = sh.booksQuantity; 
             int i = 0;
             for(; i < quantity; i++)
             {
-                if(sh.books[i]->name[0] == firstsymb)
+                if(sh.books[i]->name[0] == firstsymb || sh.books[i]->name[0] == secsymb)
                 {
                     printf("\n%s", sh.books[i]->name);
                 }
@@ -189,11 +193,11 @@ int main()
                     temp = sh.deals; 
                 if(temp)
                 {
-                    printf("\nDeal.\nBooks quantity: %d\n Books:", temp->booksQuantity);
+                    printf("\nDeal.\nBooks quantity: %d\n Books:\n", temp->booksQuantity);
                     int i = 0;
                     for(; i < quantity; i++)
                         if(temp->buyedBooks[i])
-                            printf(sh.books[i]->name);
+                            printf("%s", sh.books[i]->name);
                     
                 }
                 printf("\n\n(1)Previous deal\t(2)return to DEALS menu\t(3)Next deal");
@@ -251,5 +255,5 @@ int main()
             }
         }
     }
-    
+    FreeShop(&sh);
 }
