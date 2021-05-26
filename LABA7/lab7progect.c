@@ -114,7 +114,8 @@ int main()
                     else 
                         counter--; 
                     break;
-                case 2: ;
+                case 2: 
+                {
                     int tempqua = 0;
                     printf("How many book u want? ");
                     scanf("%d", &tempqua); 
@@ -132,7 +133,7 @@ int main()
                     sh.currDeal->booksQuantity += tempqua;
                     sh.currDeal->buyedBooks[counter] += tempqua; 
                     break;
-                
+                }
                 case 3:
                     mode = BookMenu;
                 case 4:
